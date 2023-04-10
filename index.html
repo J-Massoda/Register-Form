@@ -24,7 +24,7 @@
                     <span data-instruction>
                         Email
                     </span>
-                    <input type="Email" placeholder="Enter Your email" required>
+                    <input type="Email" id="myEmail" placeholder="Enter Your email" required>
                 </label><br>
                 <label data-input>
                     <span data-instruction>
@@ -39,7 +39,10 @@
                         Click to Log in
                     </span>
                     <span>
-                        <input type="submit" value="Log In">
+                        <input type="submit" onclick="errorMessg()" value="Log In">
+                    </span>
+                    <span>
+                        <p id="errorMessage"></p>
                     </span>
                 </label><br>
                 <p>
@@ -47,6 +50,7 @@
                     By Logging in you accept our <a href="#YOUR_TERMS">terms of use</a> .
 
                 </p>
+
             </form>
         </div>
         <!--
@@ -59,7 +63,7 @@
                     <span data-instruction>
                         Name
                     </span>
-                    <input type="text" placeholder="Enter Your Name" required size="50">
+                    <input type="text" placeholder="Enter Your Name" required>
                 </label><br>
                 <label data-input>
                     <span data-instruction>
@@ -144,10 +148,10 @@
             let showError = document.getElementById("errorMessage")
 
             if (isNaN(document.getElementById("myEmail").value)) {
-                showError.textContent = "The entered Email No is not valid"
+                showError.textContent = "The entered Email is not valid"
                 showError.style.color = "red"
             } else {
-                showError.textContent = "We will contact you shortly"
+                showError.textContent = "Welcome to Digital Rentals"
                 showError.style.color = "green"
             }
 
