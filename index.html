@@ -24,7 +24,7 @@
                     <span data-instruction>
                         Email
                     </span>
-                    <input type="Email" id="myEmail" placeholder="Enter Your email" required>
+                    <input type="Email" id="loginEmail" placeholder="Enter Your email" required>
                 </label><br>
                 <label data-input>
                     <span data-instruction>
@@ -39,10 +39,10 @@
                         Click to Log in
                     </span>
                     <span>
-                        <input type="submit" onclick="errorMessg()" value="Log In">
+                        <input type="submit" onclick="loginErrorMessg()" value="Log In">
                     </span>
                     <span>
-                        <p id="errorMessage"></p>
+                        <p id="loginErrorMessage"></p>
                     </span>
                 </label><br>
                 <p>
@@ -148,6 +148,24 @@
             let showError = document.getElementById("errorMessage")
 
             if (isNaN(document.getElementById("myEmail").value)) {
+                showError.textContent = "The entered Email is not valid"
+                showError.style.color = "red"
+            } else {
+                showError.textContent = "Registration Successful!"
+                showError.style.color = "green"
+            }
+
+
+        }
+    </script>
+
+    <script>
+        function loginErrorMessg() {
+
+
+            let showError = document.getElementById("loginErrorMessage")
+
+            if (isNaN(document.getElementById("loginEmail").value)) {
                 showError.textContent = "The entered Email is not valid"
                 showError.style.color = "red"
             } else {
